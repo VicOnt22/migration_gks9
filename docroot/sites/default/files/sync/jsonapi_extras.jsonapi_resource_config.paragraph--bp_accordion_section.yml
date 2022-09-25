@@ -1,0 +1,11 @@
+uuid: a550faea-7d7d-4a75-83bb-bffaab317d22
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_accordion_section
+id: paragraph--bp_accordion_section
+disabled: true
+path: paragraph/bp_accordion_section
+resourceType: paragraph--bp_accordion_section
+resourceFields: {  }

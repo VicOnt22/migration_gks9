@@ -1,0 +1,20 @@
+uuid: 6f86b6d0-abcd-4c8d-9498-8145cb5ca42c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - grasacgks
+_core:
+  default_config_hash: jHMz28iBOOG40T2rhhRzgyKSg8vdVmWCmRLzXWVh3Is
+id: grasacgks_page_title
+theme: grasacgks
+region: header
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

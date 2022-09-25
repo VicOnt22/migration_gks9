@@ -1,0 +1,160 @@
+uuid: 23e42e02-e2f7-418c-86f1-c1ec9cf93356
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_taxonomy_term_entity_translation_institution
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - translation
+  - Content
+  - Multilingual
+migration_group: migrate_drupal_7
+label: 'Taxonomy term entity translations (Institution)'
+source:
+  plugin: d7_taxonomy_term_entity_translation
+  bundle: institution
+process:
+  tid:
+    -
+      plugin: get
+      source: entity_id
+  name:
+    -
+      plugin: get
+      source: name
+  description/value:
+    -
+      plugin: get
+      source: description
+  description/format:
+    -
+      plugin: get
+      source: format
+  langcode:
+    -
+      plugin: get
+      source: language
+  status:
+    -
+      plugin: get
+      source: status
+  content_translation_source:
+    -
+      plugin: get
+      source: source
+  content_translation_outdated:
+    -
+      plugin: get
+      source: translate
+  content_translation_uid:
+    -
+      plugin: get
+      source: uid
+  content_translation_created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  forum_container:
+    -
+      plugin: get
+      source: is_container
+  field_address:
+    -
+      plugin: get
+      source: field_address
+  field_phone_number:
+    -
+      plugin: get
+      source: field_phone_number
+  field_fax_number:
+    -
+      plugin: get
+      source: field_fax_number
+  field_web_url:
+    -
+      plugin: field_link
+      source: field_web_url
+  field_associated_instituation:
+    -
+      plugin: get
+      source: field_associated_instituation
+  field_memo_of_understanding:
+    -
+      plugin: sub_process
+      source: field_memo_of_understanding
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_key_contact:
+    -
+      plugin: get
+      source: field_key_contact
+  field_member_responsible:
+    -
+      plugin: get
+      source: field_member_responsible
+  field_description_of_copyright:
+    -
+      plugin: get
+      source: field_description_of_copyright
+  field_description_of_history:
+    -
+      plugin: get
+      source: field_description_of_history
+  field_initials:
+    -
+      plugin: get
+      source: field_initials
+  field_gks_id:
+    -
+      plugin: get
+      source: field_gks_id
+  field_created_by:
+    -
+      plugin: get
+      source: field_created_by
+  field_import_second_pass:
+    -
+      plugin: get
+      source: field_import_second_pass
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:taxonomy_term'
+  translations: true
+  destination_module: content_translation
+  default_bundle: institution
+migration_dependencies:
+  required:
+    - upgrade_language
+    - upgrade_d7_entity_translation_settings
+    - upgrade_d7_taxonomy_term_tags
+    - upgrade_d7_taxonomy_term_collection
+    - upgrade_d7_taxonomy_term_institution
+    - upgrade_d7_taxonomy_term_regions
+    - upgrade_d7_taxonomy_term_nations
+    - upgrade_d7_taxonomy_term_contributors
+    - upgrade_d7_taxonomy_term_record_status
+    - upgrade_d7_taxonomy_term_local_origin
+    - upgrade_d7_taxonomy_term_exchange_types
+    - upgrade_d7_taxonomy_term_text_type
+    - upgrade_d7_taxonomy_term_languages
+    - upgrade_d7_taxonomy_term_interpretation
+    - upgrade_d7_taxonomy_term_transcription_status
+    - upgrade_d7_taxonomy_term_translation_status
+    - upgrade_d7_taxonomy_term_project_status
+    - upgrade_d7_taxonomy_term_item_type
+    - upgrade_d7_taxonomy_term_contributor_roles
+    - upgrade_d7_taxonomy_term_folders
+    - upgrade_d7_taxonomy_term_language_item_source
+  optional: {  }

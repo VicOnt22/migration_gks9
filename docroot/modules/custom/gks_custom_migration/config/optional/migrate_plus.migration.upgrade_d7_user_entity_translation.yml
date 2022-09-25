@@ -1,0 +1,130 @@
+uuid: b9526035-8ac8-4911-82d7-f8edac2d4d80
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_user_entity_translation
+class: Drupal\user\Plugin\migrate\User
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - translation
+  - Content
+  - Multilingual
+migration_group: migrate_drupal_7
+label: 'User accounts entity translations'
+source:
+  plugin: d7_user_entity_translation
+process:
+  uid:
+    -
+      plugin: get
+      source: entity_id
+  langcode:
+    -
+      plugin: get
+      source: language
+  content_translation_source:
+    -
+      plugin: get
+      source: source
+  content_translation_uid:
+    -
+      plugin: get
+      source: uid
+  content_translation_status:
+    -
+      plugin: get
+      source: status
+  content_translation_outdated:
+    -
+      plugin: get
+      source: translate
+  content_translation_created:
+    -
+      plugin: get
+      source: created
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+  field_first_name:
+    -
+      plugin: get
+      source: field_first_name
+  field_last_name:
+    -
+      plugin: get
+      source: field_last_name
+  field_occupation:
+    -
+      plugin: get
+      source: field_occupation
+  field_phone:
+    -
+      plugin: get
+      source: field_phone
+  field_fax:
+    -
+      plugin: get
+      source: field_fax
+  field_research_interests:
+    -
+      plugin: get
+      source: field_research_interests
+  og_user_node:
+    -
+      plugin: get
+      source: og_user_node
+  field_address:
+    -
+      plugin: get
+      source: field_address
+  field_institution:
+    -
+      plugin: sub_process
+      source: field_institution
+      process:
+        target_id: tid
+  field_gks_id:
+    -
+      plugin: get
+      source: field_gks_id
+  field_institution_name:
+    -
+      plugin: get
+      source: field_institution_name
+  field_guest_owner:
+    -
+      plugin: get
+      source: field_guest_owner
+  field_ra_owner:
+    -
+      plugin: get
+      source: field_ra_owner
+  field_heritage_item_preferred_vi:
+    -
+      plugin: get
+      source: field_heritage_item_preferred_vi
+  field_import_second_pass:
+    -
+      plugin: get
+      source: field_import_second_pass
+  field_created_by:
+    -
+      plugin: get
+      source: field_created_by
+  field_subuser_limit:
+    -
+      plugin: get
+      source: field_subuser_limit
+destination:
+  plugin: 'entity:user'
+  translations: true
+  destination_module: content_translation
+migration_dependencies:
+  required:
+    - upgrade_language
+    - upgrade_d7_entity_translation_settings
+    - upgrade_d7_user
+  optional: {  }

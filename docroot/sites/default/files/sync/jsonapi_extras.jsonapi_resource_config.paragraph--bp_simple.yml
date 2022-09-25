@@ -1,0 +1,11 @@
+uuid: 9cb3bb73-0528-4e82-b65f-9c7072780c21
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_simple
+id: paragraph--bp_simple
+disabled: true
+path: paragraph/bp_simple
+resourceType: paragraph--bp_simple
+resourceFields: {  }

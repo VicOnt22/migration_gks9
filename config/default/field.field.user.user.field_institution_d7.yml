@@ -1,0 +1,20 @@
+uuid: 6e36ad1c-e313-4711-9dd6-e2151161e73b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_institution_d7
+  module:
+    - user
+id: user.user.field_institution_d7
+field_name: field_institution_d7
+entity_type: user
+bundle: user
+label: Institution-d7
+description: 'A simple text field from GKS7 old site. To be transferred using Institution ref field above'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

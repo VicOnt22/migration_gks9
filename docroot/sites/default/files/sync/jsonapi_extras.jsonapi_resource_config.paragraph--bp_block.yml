@@ -1,0 +1,11 @@
+uuid: 53d17cb1-d4d5-4fbc-8c3c-bd1f37eff9bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_block
+id: paragraph--bp_block
+disabled: true
+path: paragraph/bp_block
+resourceType: paragraph--bp_block
+resourceFields: {  }

@@ -1,0 +1,11 @@
+uuid: 33e02880-b4f0-4d77-bf80-0ecf37285cc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_columns
+id: paragraph--bp_columns
+disabled: true
+path: paragraph/bp_columns
+resourceType: paragraph--bp_columns
+resourceFields: {  }

@@ -1,0 +1,29 @@
+uuid: cac96572-dd10-4c4a-a2f1-3dd14d73dcb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - grasacgks
+_core:
+  default_config_hash: FSJUEuK8s066T4vyBPoteZZt8veeCfzBknJ4AVLSL_s
+id: grasacgks_local_tasks
+theme: grasacgks
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '/node/*'

@@ -1,0 +1,11 @@
+uuid: 24587b47-253d-4896-b9b1-f68970694cb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_column_wrapper
+id: paragraph--bp_column_wrapper
+disabled: true
+path: paragraph/bp_column_wrapper
+resourceType: paragraph--bp_column_wrapper
+resourceFields: {  }

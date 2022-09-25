@@ -1,0 +1,11 @@
+uuid: f8d1d44e-def3-445e-9d56-5620d5dd030f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_modal
+id: paragraph--bp_modal
+disabled: true
+path: paragraph/bp_modal
+resourceType: paragraph--bp_modal
+resourceFields: {  }

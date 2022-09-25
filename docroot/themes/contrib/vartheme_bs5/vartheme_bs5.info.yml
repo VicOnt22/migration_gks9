@@ -1,0 +1,35 @@
+name: 'Vartheme BS5'
+description: 'Base theme for Varbase standard websites. Based on Bootstrap 5 framework using SASS, and extending Radix theme.'
+core_version_requirement: ^9 || ^10
+engine: twig
+type: theme
+base theme: radix
+screenshot: screenshot.png
+
+regions:
+  navbar_branding: Navbar branding
+  navbar_left: Navbar left
+  navbar_right: Navbar right
+  header: Header
+  content: Content
+  page_bottom: Page bottom
+  footer: Footer
+
+libraries:
+  - vartheme_bs5/style
+
+libraries-override:
+  betterlogin/betterlogin_css: vartheme_bs5/betterlogin
+  social_auth/auth-icons: vartheme_bs5/auth-icons
+
+ckeditor_stylesheets:
+  - build/css/main.style.css
+
+components:
+  namespaces:
+    vartheme_bs5: src/components
+    atoms: src/components/atoms
+    molecules: src/components/molecules
+    organisms: src/components/organisms
+    templates: src/components/templates
+    pages: src/components/pages

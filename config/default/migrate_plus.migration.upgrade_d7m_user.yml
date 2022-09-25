@@ -1,0 +1,141 @@
+uuid: d1919a1c-07e6-45b4-a2e4-1a7d783a371d
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7m_user
+class: Drupal\user\Plugin\migrate\User
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_users
+label: 'User accounts'
+source:
+  plugin: firstlast
+  constants:
+    str_separator: ' '
+process:
+  uid:
+    -
+      plugin: skip_on_value
+      equals: true
+      source: uid
+      method: row
+      value:
+        - 1
+  name: name
+  pass: pass
+  mail:
+    -
+      plugin: get
+      source: mail
+  created:
+    -
+      plugin: get
+      source: created
+  access:
+    -
+      plugin: get
+      source: access
+  login:
+    -
+      plugin: get
+      source: login
+  status:
+    -
+      plugin: get
+      source: status
+  timezone:
+    -
+      plugin: get
+      source: timezone
+  langcode:
+    -
+      plugin: user_langcode
+      source: entity_language
+      fallback_to_site_default: false
+  preferred_langcode:
+    -
+      plugin: user_langcode
+      source: language
+      fallback_to_site_default: true
+  preferred_admin_langcode:
+    -
+      plugin: user_langcode
+      source: language
+      fallback_to_site_default: true
+  init:
+    -
+      plugin: get
+      source: init
+  roles:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_user_role
+      source: roles
+  user_picture:
+    -
+      plugin: default_value
+      source: picture
+      default_value: null
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_file
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+  field_name_first_last: field_last_name_value
+  field_occupation:
+    -
+      plugin: get
+      source: field_occupation
+  field_research_interests:
+    -
+      plugin: get
+      source: field_research_interests
+  og_user_node:
+    -
+      plugin: get
+      source: og_user_node
+  field_address:
+    -
+      plugin: get
+      source: field_address
+  field_institution:
+    -
+      plugin: sub_process
+      source: field_institution
+      process:
+        target_id: tid
+  field_gks_id:
+    -
+      plugin: get
+      source: field_gks_id
+  field_institution_name:
+    -
+      plugin: get
+      source: field_institution_name
+  field_guest_owner:
+    -
+      plugin: get
+      source: field_guest_owner
+  field_ra_owner:
+    -
+      plugin: get
+      source: field_ra_owner
+destination:
+  plugin: 'entity:user'
+migration_dependencies:
+  required:
+    - upgrade_d7_user_role
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_file
+    - upgrade_language
+    - upgrade_default_language
+    - upgrade_user_picture_field_instance
+    - upgrade_user_picture_entity_display
+    - upgrade_user_picture_entity_form_display
+    - upgrade_d7_user_role

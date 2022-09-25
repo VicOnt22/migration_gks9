@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ * Available config:
+ *  - is_front: true | false -> to determine if page is front or not
+ */
+#}
+<div class="page d-flex flex-column">
+  {% embed '@organisms/navbar/navbar.twig' with {
+    placement: 'sticky-top',
+    container: 'fixed',
+    color: 'light',
+    utility_classes: ['bg-light'],
+  } %}
+
+    {% block branding %}
+      {% if page.navbar_branding %}
+        {{ page.navbar_branding }}
+      {% endif %}
+    {% endblock %}
+
+    {% block left %}
+      {% if page.navbar_left %}
+        <div class="me-auto">
+          {{ page.navbar_left }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block right %}
+      {% if page.navbar_right %}
+        <div class="ms-auto">
+          {{ page.navbar_right }}
+        </div>
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+
+  {% if page.header %}
+    <header class="page__header {{ is_front ? '' : 'pb-3' }}">
+      <div class="container">
+        {{ page.header }}
+      </div>
+    </header>
+  {% endif %}
+
+  <main>
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {% if page.content %}
+      <div class="page__content">
+        <div class="container">
+          {{ page.content }}
+        </div>
+      </div>
+    {% endif %}
+  </main>
+
+  {% if page.footer %}
+
+    {% embed "@organisms/footer/footer.twig" with {
+      content: page.footer
+    } %}
+
+    {% endembed %}
+  {% endif %}
+</div>

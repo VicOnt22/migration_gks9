@@ -1,0 +1,11 @@
+uuid: c3416ad3-25ce-4cec-b3fc-374f126ef9bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_image
+id: paragraph--bp_image
+disabled: true
+path: paragraph/bp_image
+resourceType: paragraph--bp_image
+resourceFields: {  }

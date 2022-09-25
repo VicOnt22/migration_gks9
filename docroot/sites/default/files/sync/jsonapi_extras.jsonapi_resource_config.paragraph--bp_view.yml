@@ -1,0 +1,11 @@
+uuid: fa8fd794-d512-469a-9e7d-68de345be556
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_view
+id: paragraph--bp_view
+disabled: true
+path: paragraph/bp_view
+resourceType: paragraph--bp_view
+resourceFields: {  }

@@ -1,0 +1,11 @@
+uuid: 4c6aa1b4-12ef-4824-8c2a-e9a940990f4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_columns_three_uneven
+id: paragraph--bp_columns_three_uneven
+disabled: true
+path: paragraph/bp_columns_three_uneven
+resourceType: paragraph--bp_columns_three_uneven
+resourceFields: {  }

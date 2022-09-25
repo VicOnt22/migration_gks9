@@ -1,0 +1,102 @@
+uuid: 5727305a-061c-4eda-ae1a-d2f3ca8bb98b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-g2q9EJvhvyxU6h11aT450VAR6Vv3lnAcH8ExtcKueU'
+id: upgrade_d7_taxonomy_term_entity_translation_language_item_source
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - translation
+  - Content
+  - Multilingual
+migration_group: migrate_drupal_7
+label: 'Taxonomy term entity translations (Language Item Source)'
+source:
+  plugin: d7_taxonomy_term_entity_translation
+  bundle: language_item_source
+process:
+  tid:
+    -
+      plugin: get
+      source: entity_id
+  name:
+    -
+      plugin: get
+      source: name
+  description/value:
+    -
+      plugin: get
+      source: description
+  description/format:
+    -
+      plugin: get
+      source: format
+  langcode:
+    -
+      plugin: get
+      source: language
+  status:
+    -
+      plugin: get
+      source: status
+  content_translation_source:
+    -
+      plugin: get
+      source: source
+  content_translation_outdated:
+    -
+      plugin: get
+      source: translate
+  content_translation_uid:
+    -
+      plugin: get
+      source: uid
+  content_translation_created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  forum_container:
+    -
+      plugin: get
+      source: is_container
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:taxonomy_term'
+  translations: true
+  destination_module: content_translation
+  default_bundle: language_item_source
+migration_dependencies:
+  required:
+    - upgrade_language
+    - upgrade_d7_entity_translation_settings
+    - upgrade_d7_taxonomy_term_tags
+    - upgrade_d7_taxonomy_term_collection
+    - upgrade_d7_taxonomy_term_institution
+    - upgrade_d7_taxonomy_term_regions
+    - upgrade_d7_taxonomy_term_nations
+    - upgrade_d7_taxonomy_term_contributors
+    - upgrade_d7_taxonomy_term_record_status
+    - upgrade_d7_taxonomy_term_local_origin
+    - upgrade_d7_taxonomy_term_exchange_types
+    - upgrade_d7_taxonomy_term_text_type
+    - upgrade_d7_taxonomy_term_languages
+    - upgrade_d7_taxonomy_term_interpretation
+    - upgrade_d7_taxonomy_term_transcription_status
+    - upgrade_d7_taxonomy_term_translation_status
+    - upgrade_d7_taxonomy_term_project_status
+    - upgrade_d7_taxonomy_term_item_type
+    - upgrade_d7_taxonomy_term_contributor_roles
+    - upgrade_d7_taxonomy_term_folders
+    - upgrade_d7_taxonomy_term_language_item_source
+  optional: {  }

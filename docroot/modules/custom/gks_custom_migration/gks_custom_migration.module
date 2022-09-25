@@ -1,0 +1,27 @@
+<?php
+
+
+/**
+ * Implement hook_uninstall().
+ *
+ * @return bool|void
+ */
+function gks_custom_migration_uninstall() {
+
+  $module_path = \Drupal::service('extension.list.module')->getPath('gks_custom_migration') . '/config/optional';
+
+  $configs = [];
+  $files = \Drupal::service('file_system')->scanDirectory($module_path, '/\.yml$/');
+
+  if ($files) {
+    foreach ($files as $file) {
+      $configs[] = $file->name;
+    }
+
+    foreach ($configs as $config_name) {
+      \Drupal::configFactory()->getEditable($config_name)->delete();
+    }
+
+    return TRUE;
+  }
+}

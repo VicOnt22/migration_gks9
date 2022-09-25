@@ -1,0 +1,532 @@
+uuid: be9a7bc1-b2a5-4171-92fb-a85830b50a3d
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_heritage_item
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Heritage Item)'
+source:
+  plugin: d7_node_complete
+  node_type: heritage_item
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_heritage_item/0/status:
+    -
+      plugin: get
+      source: comment
+  field_catalog_id:
+    -
+      plugin: get
+      source: field_catalog_id
+  field_identifier_url:
+    -
+      plugin: field_link
+      source: field_identifier_url
+  field_title_rationale:
+    -
+      plugin: get
+      source: field_title_rationale
+  field_description:
+    -
+      plugin: get
+      source: field_description
+  field_contributors_members:
+    -
+      plugin: get
+      source: field_contributors_members
+  field_contributors_others:
+    -
+      plugin: sub_process
+      source: field_contributors_others
+      process:
+        target_id: tid
+  field_record_creation_notes:
+    -
+      plugin: get
+      source: field_record_creation_notes
+  field_access_rationale:
+    -
+      plugin: get
+      source: field_access_rationale
+  field_date_verified:
+    -
+      plugin: get
+      source: field_date_verified
+  field_date_made:
+    -
+      plugin: get
+      source: field_date_made
+  field_date_attribution:
+    -
+      plugin: get
+      source: field_date_attribution
+  field_date_seasonal_time:
+    -
+      plugin: get
+      source: field_date_seasonal_time
+  field_date_ceremonial_time:
+    -
+      plugin: get
+      source: field_date_ceremonial_time
+  field_time_attribution:
+    -
+      plugin: get
+      source: field_time_attribution
+  field_original_function:
+    -
+      plugin: get
+      source: field_original_function
+  field_date_acquisition:
+    -
+      plugin: get
+      source: field_date_acquisition
+  field_date_collection:
+    -
+      plugin: get
+      source: field_date_collection
+  field_provenance:
+    -
+      plugin: get
+      source: field_provenance
+  field_identifier_othercatnos:
+    -
+      plugin: get
+      source: field_identifier_othercatnos
+  field_exhibition_notes:
+    -
+      plugin: get
+      source: field_exhibition_notes
+  field_publication_history:
+    -
+      plugin: get
+      source: field_publication_history
+  field_sources_exhib_pub_his:
+    -
+      plugin: get
+      source: field_sources_exhib_pub_his
+  field_bibliographic_citation:
+    -
+      plugin: get
+      source: field_bibliographic_citation
+  field_languages:
+    -
+      plugin: sub_process
+      source: field_languages
+      process:
+        target_id: tid
+  field_interpretation:
+    -
+      plugin: sub_process
+      source: field_interpretation
+      process:
+        target_id: tid
+  field_contributor_interpreters:
+    -
+      plugin: sub_process
+      source: field_contributor_interpreters
+      process:
+        target_id: tid
+  field_interpretation_notes:
+    -
+      plugin: get
+      source: field_interpretation_notes
+  field_edition_statement:
+    -
+      plugin: get
+      source: field_edition_statement
+  field_transcription_available:
+    -
+      plugin: get
+      source: field_transcription_available
+  field_contributor_transcriber:
+    -
+      plugin: sub_process
+      source: field_contributor_transcriber
+      process:
+        target_id: tid
+  field_transcription_status:
+    -
+      plugin: sub_process
+      source: field_transcription_status
+      process:
+        target_id: tid
+  field_date_transcrip_complete:
+    -
+      plugin: get
+      source: field_date_transcrip_complete
+  field_transcription_verifier:
+    -
+      plugin: get
+      source: field_transcription_verifier
+  field_trans_languages:
+    -
+      plugin: sub_process
+      source: field_trans_languages
+      process:
+        target_id: tid
+  field_contributor_translators:
+    -
+      plugin: sub_process
+      source: field_contributor_translators
+      process:
+        target_id: tid
+  field_translation_status:
+    -
+      plugin: sub_process
+      source: field_translation_status
+      process:
+        target_id: tid
+  field_trans_completed:
+    -
+      plugin: get
+      source: field_trans_completed
+  field_translation_verifier:
+    -
+      plugin: get
+      source: field_translation_verifier
+  field_contributor_performers:
+    -
+      plugin: sub_process
+      source: field_contributor_performers
+      process:
+        target_id: tid
+  field_date_print_made:
+    -
+      plugin: get
+      source: field_date_print_made
+  field_description_materials:
+    -
+      plugin: get
+      source: field_description_materials
+  field_description_techniques:
+    -
+      plugin: get
+      source: field_description_techniques
+  field_description_motifs:
+    -
+      plugin: get
+      source: field_description_motifs
+  field_description_symbols:
+    -
+      plugin: get
+      source: field_description_symbols
+  field_description_condition:
+    -
+      plugin: get
+      source: field_description_condition
+  field_description_othernotes:
+    -
+      plugin: get
+      source: field_description_othernotes
+  field_acquired_from:
+    -
+      plugin: get
+      source: field_acquired_from
+  field_contributor_collector:
+    -
+      plugin: sub_process
+      source: field_contributor_collector
+      process:
+        target_id: tid
+  field_source_coll_his:
+    -
+      plugin: get
+      source: field_source_coll_his
+  field_description_howtocite:
+    -
+      plugin: get
+      source: field_description_howtocite
+  field_record_creation:
+    -
+      plugin: get
+      source: field_record_creation
+  field_item_name:
+    -
+      plugin: get
+      source: field_item_name
+  field_description_source:
+    -
+      plugin: get
+      source: field_description_source
+  field_image_files:
+    -
+      plugin: sub_process
+      source: field_image_files
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_audio_files:
+    -
+      plugin: sub_process
+      source: field_audio_files
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_video_files:
+    -
+      plugin: sub_process
+      source: field_video_files
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_item_type:
+    -
+      plugin: sub_process
+      source: field_item_type
+      process:
+        target_id: tid
+  field_related_heritage_item:
+    -
+      plugin: get
+      source: field_related_heritage_item
+  field_record_status:
+    -
+      plugin: get
+      source: field_record_status
+  field_abstract:
+    -
+      plugin: get
+      source: field_abstract
+  field_text_type:
+    -
+      plugin: sub_process
+      source: field_text_type
+      process:
+        target_id: tid
+  field_subsequent_functions:
+    -
+      plugin: get
+      source: field_subsequent_functions
+  field_function_attribution:
+    -
+      plugin: get
+      source: field_function_attribution
+  field_exchange_type:
+    -
+      plugin: get
+      source: field_exchange_type
+  field_title_translations:
+    -
+      plugin: get
+      source: field_title_translations
+  field_related_language_item:
+    -
+      plugin: get
+      source: field_related_language_item
+  field_current_institution:
+    -
+      plugin: sub_process
+      source: field_current_institution
+      process:
+        target_id: tid
+  field_gks_id:
+    -
+      plugin: get
+      source: field_gks_id
+  field_nation_rationale:
+    -
+      plugin: get
+      source: field_nation_rationale
+  field_description_medium:
+    -
+      plugin: get
+      source: field_description_medium
+  field_image_references:
+    -
+      plugin: get
+      source: field_image_references
+  og_group_ref:
+    -
+      plugin: get
+      source: og_group_ref
+  field_dimensions:
+    -
+      plugin: get
+      source: field_dimensions
+  field_local_origin_tid:
+    -
+      plugin: sub_process
+      source: field_local_origin_tid
+      process:
+        target_id: tid
+  field_filter_date_made:
+    -
+      plugin: sub_process
+      source: field_filter_date_made
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+        end_value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value2
+  field_nation_tid:
+    -
+      plugin: sub_process
+      source: field_nation_tid
+      process:
+        target_id: tid
+  field_folders:
+    -
+      plugin: sub_process
+      source: field_folders
+      process:
+        target_id: tid
+  field_maker_name:
+    -
+      plugin: get
+      source: field_maker_name
+  field_make_role:
+    -
+      plugin: get
+      source: field_make_role
+  field_maker_attribution:
+    -
+      plugin: get
+      source: field_maker_attribution
+  field_region_of_origin:
+    -
+      plugin: sub_process
+      source: field_region_of_origin
+      process:
+        target_id: tid
+  field_collection:
+    -
+      plugin: sub_process
+      source: field_collection
+      process:
+        target_id: tid
+  field_record_editable_by:
+    -
+      plugin: sub_process
+      source: field_record_editable_by
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_user
+          source: uid
+  field_region_origin_attribution:
+    -
+      plugin: get
+      source: field_region_origin_attribution
+  field_documentation:
+    -
+      plugin: sub_process
+      source: field_documentation
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_accessrights:
+    -
+      plugin: get
+      source: field_accessrights
+  field_accessrights_restrictedto:
+    -
+      plugin: get
+      source: field_accessrights_restrictedto
+  field_status_note:
+    -
+      plugin: get
+      source: field_status_note
+  field_date_made_code:
+    -
+      plugin: get
+      source: field_date_made_code
+  field_maker_role:
+    -
+      plugin: sub_process
+      source: field_maker_role
+      process:
+        target_id: tid
+  field_local_origin_attribution:
+    -
+      plugin: get
+      source: field_local_origin_attribution
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: heritage_item
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+    - upgrade_language
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_user

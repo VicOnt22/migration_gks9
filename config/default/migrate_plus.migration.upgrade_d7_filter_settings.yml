@@ -1,0 +1,31 @@
+uuid: ace47640-dc97-4585-9517-767236e2257c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 9ldfxFxgBeh5-xc-mv1qCVYzZfmS0HXyY5ZiFKI4WQ4
+id: upgrade_d7_filter_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Drupal 7 filter settings'
+source:
+  plugin: variable
+  variables:
+    - filter_fallback_format
+  source_module: filter
+process:
+  fallback_format:
+    -
+      plugin: get
+      source: filter_fallback_format
+destination:
+  plugin: config
+  config_name: filter.settings
+migration_dependencies:
+  required: {  }
+  optional: {  }

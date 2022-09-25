@@ -1,0 +1,11 @@
+uuid: 4dbd3142-bad3-41fa-987c-80e5ec8b66cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_tabs
+id: paragraph--bp_tabs
+disabled: true
+path: paragraph/bp_tabs
+resourceType: paragraph--bp_tabs
+resourceFields: {  }

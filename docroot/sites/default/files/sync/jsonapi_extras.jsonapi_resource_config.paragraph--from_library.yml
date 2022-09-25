@@ -1,0 +1,11 @@
+uuid: 4e0f0cdf-9d04-45b5-87eb-717b5d3b7117
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.from_library
+id: paragraph--from_library
+disabled: true
+path: paragraph/from_library
+resourceType: paragraph--from_library
+resourceFields: {  }

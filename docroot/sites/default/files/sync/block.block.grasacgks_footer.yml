@@ -1,0 +1,27 @@
+uuid: c918831e-f7e8-43d7-925f-7acdf589150c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - grasacgks
+_core:
+  default_config_hash: uRh51-A6Cfi4fE_ZAweDwDX2ya1aLIgHfQTQUo5LcJM
+id: grasacgks_footer
+theme: grasacgks
+region: footer
+weight: -5
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
