@@ -28,7 +28,8 @@
         "querypath/querypath": "^3.0",
         "vardot/varbase": "~9.0",
         "vardot/varbase-updater": "~2.0",
-        "webflo/drupal-finder": "~1.0"
+        "webflo/drupal-finder": "~1.0",
+        "drupal/file_delete": "^1.0"
     },
     "conflict": {
         "drupal/ctools": "^3.10 || ^4.0.1",
@@ -217,6 +218,9 @@
             },
             "drupal/og": {
                 "Default membership cannot be deleted /project/og/issues/3257557": "https://git.drupalcode.org/project/og/-/merge_requests/2.diff"
+            },
+            "drupal/file_delete": {
+                "functionality to immediately delete files and override usage check issues/3115158": "https://www.drupal.org/files/issues/2021-12-03/3115158-12.patch"
             }
         }
     },

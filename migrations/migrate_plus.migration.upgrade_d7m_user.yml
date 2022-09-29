@@ -71,7 +71,7 @@ process:
   roles:
     -
       plugin: migration_lookup
-      migration: upgrade_d7_user_role
+      migration: upgrade_d7m_user_role
       source: roles
   user_picture:
     -
@@ -94,10 +94,6 @@ process:
     -
       plugin: get
       source: field_research_interests
-  og_user_node:
-    -
-      plugin: get
-      source: og_user_node
   field_address:
     -
       plugin: get
@@ -108,27 +104,19 @@ process:
       source: field_institution
       process:
         target_id: tid
-  field_gks_id:
-    -
-      plugin: get
-      source: field_gks_id
   field_institution_name:
     -
       plugin: get
       source: field_institution_name
-  field_guest_owner:
+  field_created_by:
     -
       plugin: get
-      source: field_guest_owner
-  field_ra_owner:
-    -
-      plugin: get
-      source: field_ra_owner
+      source: field_created_by
 destination:
   plugin: 'entity:user'
 migration_dependencies:
   required:
-    - upgrade_d7_user_role
+    - upgrade_d7m_user_role
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_file
@@ -137,4 +125,4 @@ migration_dependencies:
     - upgrade_user_picture_field_instance
     - upgrade_user_picture_entity_display
     - upgrade_user_picture_entity_form_display
-    - upgrade_d7_user_role
+    - upgrade_d7m_user_role

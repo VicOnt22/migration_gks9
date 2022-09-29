@@ -29,6 +29,7 @@ drush mrs upgrade_d7m_user     (migrate:reset-status)
 
 ### Execute migrations using manifest file that have path starting from inside drupal root See also migrate:tree
 drush cim -y --partial --source=../manifests/
+drush cim -y --partial --source=../migrations/
 drush cim -y --partial --source=../migrations/resource/
 drush migrate-manifest ../manifests/migrate_manifest.users_roles.yml
 drush migrate-manifest ../manifests/migrate_manifest.users_roles.yml --update
@@ -50,6 +51,10 @@ or:
 drush migrate-import upgrade_d7_user_role --limit=3  --update --force
 
 ### Migrate a node with given id, update if exists (example)
+drush mim upgrade_d7file --idlist=29888 --update     //file id used for user with uid=1650
+drush mim upgrade_d7m_user --idlist=1650 --update    //it creates a link with correct name with size=0 (just placeholder for real file to be simply copied)
+                                                     //will try to have it as media !!!
+
 drush mim upgrade_d7_publication_nodes --idlist=14644 --update --force
 
 ### Use groups to have a bunch of migrations together (similar to manifest but manifest is strict on sequence)
